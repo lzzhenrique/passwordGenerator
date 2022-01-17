@@ -6,6 +6,7 @@ module.exports = async (passwordObj) => {
     const { error } = encriptSchema.validate(passwordObj);
 
     if (error) {
+      error.details[0].code = 400;
       return { error };
     }
     

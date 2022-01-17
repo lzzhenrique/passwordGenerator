@@ -4,26 +4,31 @@ module.exports = joi.object({
   passwordLength: joi.number()
   .required()
   .messages({
-    'number.required': '"passwordLength" is required',
+    'any.empty': '"passwordLength" is required',
+    'number.required': '"passwordLength" must be a number',
   }),
   numbers: joi.bool()
     .required()
     .messages({
-      'number.required': '"numbers" is required',
+      'any.empty': '"numbers" is required',
+      'bool.required': '"numbers" must be a bool',
   }),
   lower: joi.bool()
     .required()
     .messages({
-      'bool.required': '"lower" is required',
+      'any.empty': '"lower" is required',
+      'bool.required': '"lower" must be a bool',
   }),
   simbols: joi.bool()
     .required()
     .messages({
-      'bool.required': '"simbols" is required',
+      'any.empty': '"simbols" is required',
+      'bool.required': '"simbols" must be a bool',
   }),
   upper: joi.bool()
     .required()
     .messages({
-      'bool.required': '"upper" is required',
+      'any.empty': '"upper" is required',
+      'bool.required': '"upper" must be a bool',
   }),
 });

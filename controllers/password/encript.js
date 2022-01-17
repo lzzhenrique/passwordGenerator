@@ -7,6 +7,8 @@ module.exports = async (req, res, next) => {
     
     const verifyPassword = await encript({ numbers, lower, passwordLength, simbols, upper });
 
+    console.log(verifyPassword)
+
     if ('error' in verifyPassword) return next(verifyPassword.error);
 
     return res.status(200).json(verifyPassword);
