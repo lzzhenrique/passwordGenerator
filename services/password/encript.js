@@ -1,0 +1,22 @@
+const encriptSchema = require('../../schemas/encript');
+const encript = require('../../models/password/encript')
+
+module.exports = async (passwordObj) => {
+  try {
+    const { error } = encriptSchema.validate(passwordObj);
+
+    if (error) {
+      return { error };
+    }
+    
+    const passwordEntries = Object.entries(passwordObj);
+
+    passwordEntries.forEach((entrie) => {
+      if (!entrie[1]) delete passwordObj[entrie[0]];
+    });
+
+    return encript(passwordObj);
+  } catch (error) {
+    return { error };
+  }
+};
