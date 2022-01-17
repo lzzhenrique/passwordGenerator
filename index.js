@@ -4,7 +4,7 @@ const app = express();
 const root = require('./controllers/root');
 const err = require('./middlewares/errors');
 
-const PORT = 3001 || process.env.PORT;
+const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 app.use('/', root);
