@@ -12,9 +12,7 @@ module.exports = async (passwordObj) => {
     
     const passwordEntries = Object.entries(passwordObj);
 
-    passwordEntries.forEach((entrie) => {
-      if (!entrie[1]) delete passwordObj[entrie[0]];
-    });
+    passwordEntries.forEach((entrie) => !entrie[1] ? delete passwordObj[entrie[0]] : null);
 
     return encript(passwordObj);
   } catch (error) {
