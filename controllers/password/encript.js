@@ -2,12 +2,7 @@ const encript = require('../../services/password/encript');
 
 module.exports = async (req, res, next) => {
   try {
-    const { 
-      numbers, lower, passwordLength, simbols, upper } = req.body;
-    
-    const verifyPassword = await encript({ numbers, lower, passwordLength, simbols, upper });
-
-    console.log(verifyPassword)
+    const verifyPassword = await encript({ ...req.body });
 
     if ('error' in verifyPassword) return next(verifyPassword.error);
 

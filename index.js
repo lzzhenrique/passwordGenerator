@@ -1,11 +1,17 @@
 const express = require('express');
-const app = express();
-
+const cors = require('cors');
 const root = require('./controllers/root');
 const err = require('./middlewares/errors');
 
+const app = express();
 const PORT = process.env.PORT || 3001;
+
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['POST'],
+}));
 
 app.use('/', root);
 app.use(err);

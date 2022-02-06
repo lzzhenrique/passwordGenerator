@@ -17,7 +17,7 @@ module.exports = joi.object({
       'any.empty': '"numbers" is required',
       'bool.required': '"numbers" must be a bool',
   }),
-  lower: joi.bool()
+  lowerCase: joi.bool()
     .required()
     .messages({
       'any.empty': '"lower" is required',
@@ -29,7 +29,7 @@ module.exports = joi.object({
       'any.empty': '"simbols" is required',
       'bool.required': '"simbols" must be a bool',
   }),
-  upper: joi.bool()
+  upperCase: joi.bool()
     .required()
     .messages({
       'any.empty': '"upper" is required',
