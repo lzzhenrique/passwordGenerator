@@ -1,6 +1,6 @@
 const options = {
-  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  lower: 'abcdefghijklmnopqrstuvwxyz',
+  upperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  lowerCase: 'abcdefghijklmnopqrstuvwxyz',
   numbers: '1234567890',
   simbols: '!@#$%^&*()_+=-',
 };
